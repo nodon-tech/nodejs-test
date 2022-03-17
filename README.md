@@ -5,6 +5,7 @@
 Design an API endpoint that provides autocomplete suggestions for large cities.
 The suggestions should be restricted to cities in the USA and Canada with a population above 5000 people.
 
+- use this repo as foundation but feel free to change anything
 - the endpoint is exposed at `/suggestions`
 - the partial (or complete) search term is passed as a query string parameter `q`
 - the caller's location can optionally be supplied via query string parameters `latitude` and `longitude` to help improve relative scores
@@ -14,8 +15,6 @@ The suggestions should be restricted to cities in the USA and Canada with a popu
   - each suggestion has a name which can be used to disambiguate between similarly named locations
   - each suggestion has a latitude and longitude
 - all functional tests should pass (additional tests may be implemented as necessary).
-- the final application should be deployed to any host like [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
-- an email with the url should be sent to your contact at Nodon
 - feel free to add more features if you like!
 
 #### Sample responses
@@ -71,7 +70,7 @@ These responses are meant to provide guidance. The exact values can vary based o
 
 - All code should be written in Typescript
 - Mitigations to handle high levels of traffic should be implemented.
-- Challenge is submitted as pull request against this repo ([fork it](https://help.github.com/articles/fork-a-repo/) and [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)).
+- Code test can be submitted by mailing a link to a public repo or a .zip to your Nodon contact
 - Documentation and maintainability is a plus.
 - Any kind of third party dependencies may be used
 - Feel free to replace current testing & server setup to something of your preference.
