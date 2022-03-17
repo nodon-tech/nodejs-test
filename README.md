@@ -15,6 +15,7 @@ The suggestions should be restricted to cities in the USA and Canada with a popu
   - each suggestion has a name which can be used to disambiguate between similarly named locations
   - each suggestion has a latitude and longitude
 - all functional tests should pass (additional tests may be implemented as necessary).
+- the final application should be deployed to any host like [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
 - feel free to add more features if you like!
 
 #### Sample responses
@@ -68,11 +69,12 @@ These responses are meant to provide guidance. The exact values can vary based o
 
 ### Non-functional
 
-- All code should be written in Typescript
+- All code should be written in Typescript.
 - Mitigations to handle high levels of traffic should be implemented.
-- Code test can be submitted by mailing a link to a public repo or a .zip to your Nodon contact
+- Code test can be submitted by mailing a link to a public repo or a .zip to your Nodon contact.
+- The email should contain a link to the deployed service.
 - Documentation and maintainability is a plus.
-- Any kind of third party dependencies may be used
+- Any kind of third party dependencies may be used.
 - Feel free to replace current testing & server setup to something of your preference.
 
 ## Dataset
