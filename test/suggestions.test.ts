@@ -1,11 +1,9 @@
-import app from '../src/app';
+import server from '../src/server';
 import { expect } from 'chai';
 import { describe } from 'mocha';
 import Supertest from 'supertest';
 
-console.log('app', app);
-
-const request = Supertest.agent(app);
+const request = Supertest.agent(server);
 describe('GET non-existent route', () => {
   let response: Supertest.Response;
 
@@ -67,11 +65,20 @@ describe('GET /suggestions', () => {
       expect(json.suggestions).to.have.length.above(0);
     });
 
-    describe.skip('Validate the shape of the data being returned', () => {
+    it('contains a match with name montreal', () => {
+      expect(json.suggestions).to.satisfy(
+        (suggestions: any) =>
+          Array.isArray(suggestions) &&
+          suggestions.some((suggestion) => suggestion.name.test(/montreal/i)),
+      );
+    });
+
+    describe('Validate the shape of the data being returned', () => {
       it('contains latitudes and longitudes', () => {
         expect(json.suggestions).to.satisfy(
           (suggestions: any) =>
             Array.isArray(suggestions) &&
+            suggestions.length &&
             suggestions.every(
               (suggestion) => suggestion.latitude && suggestion.longitude,
             ),
@@ -82,6 +89,7 @@ describe('GET /suggestions', () => {
         expect(json.suggestions).to.satisfy(
           (suggestions: any) =>
             Array.isArray(suggestions) &&
+            suggestions.length &&
             suggestions.every(
               (suggestion) => suggestion.latitude && suggestion.longitude,
             ),
@@ -89,16 +97,9 @@ describe('GET /suggestions', () => {
       });
     });
 
+    // Remove this
     it('is a gratuitously failing test you should remove to prove you ran the tests', () => {
       expect(true).to.equal(false);
-    });
-
-    it('contains a match', () => {
-      expect(json.suggestions).to.satisfy(
-        (suggestions: any) =>
-          Array.isArray(suggestions) &&
-          suggestions.some((suggestion) => suggestion.name.test(/montreal/i)),
-      );
     });
   });
 });

@@ -89,7 +89,7 @@ We will use the following criteria to evaluate your solution:
 - Developer Experience (how easy it is to run your solution locally, how clear your documentation is, etc)
 - Solution correctness
 - Performance
-- Tests (quality and coverage)
+- Tests (quality and coverage). Some tests are already included and not working, these should be made pass by fixing code or changing the test.
 - Code style and cleanliness
 - Attention to detail
 - Ability to make sensible assumptions
